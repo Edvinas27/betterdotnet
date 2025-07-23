@@ -1,0 +1,6 @@
+*.sln
+*.slnx
+.vscode
+
+BetterDictionary/bin/
+BetterDictionary/obj/
