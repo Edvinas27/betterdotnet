@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using BenchmarkDotNet.Running;
 
 namespace BetterDictionary;
 
@@ -15,7 +16,6 @@ public class Program
         //* Difference will not be noticeable for small dictionaries, but for large dictionaries it will be significant if performance is important.
         //! Bypasses security checks.
 
-        Benchmark.BenchmarkGetOrAdd();
-        Benchmark.BenchmarkDefault();
+        BenchmarkRunner.Run<Benchmark>();
     }
 }
