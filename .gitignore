@@ -2,8 +2,5 @@
 *.slnx
 .vscode
 BenchmarkDotNet.Artifacts/
-
-
-
-BetterDictionary/bin/
-BetterDictionary/obj/
+bin/
+obj/
