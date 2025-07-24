@@ -7,4 +7,68 @@
 | StringConcatMethod  | 3,805,201.2 us | 16,432.66 us | 15,371.12 us |    2 | 10679000.0000 | 10594000.0000 | 10594000.0000 | 45707.14 MB |
 | StringInterpolation | 3,811,352.2 us | 16,058.23 us | 15,020.87 us |    2 | 10571000.0000 | 10490000.0000 | 10486000.0000 | 45705.92 MB |
 
-????????????????
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Rank      : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Gen1      : GC Generation 1 collects per 1000 operations
+  Gen2      : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 μs      : 1 Microsecond (0.000001 sec)
+
+  // * Detailed results *
+Benchmark.StringBuilderAppend: DefaultJob
+Runtime = .NET 9.0.2 (9.0.225.6610), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 533.452 μs, StdErr = 2.631 μs (0.49%), N = 17, StdDev = 10.850 μs
+Min = 517.874 μs, Q1 = 525.872 μs, Median = 532.078 μs, Q3 = 539.736 μs, Max = 556.283 μs
+IQR = 13.864 μs, LowerFence = 505.077 μs, UpperFence = 560.532 μs
+ConfidenceInterval = [522.886 μs; 544.017 μs] (CI 99.9%), Margin = 10.565 μs (1.98% of Mean)
+Skewness = 0.6, Kurtosis = 2.24, MValue = 2
+-------------------- Histogram --------------------
+[512.336 μs ; 524.640 μs) | @@@
+[524.640 μs ; 535.716 μs) | @@@@@@@@@
+[535.716 μs ; 548.728 μs) | @@@
+[548.728 μs ; 561.822 μs) | @@
+---------------------------------------------------
+
+Benchmark.StringConcatenation: DefaultJob
+Runtime = .NET 9.0.2 (9.0.225.6610), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 3.713 s, StdErr = 0.006 s (0.16%), N = 14, StdDev = 0.023 s
+Min = 3.689 s, Q1 = 3.698 s, Median = 3.706 s, Q3 = 3.724 s, Max = 3.771 s
+IQR = 0.027 s, LowerFence = 3.657 s, UpperFence = 3.765 s
+ConfidenceInterval = [3.688 s; 3.739 s] (CI 99.9%), Margin = 0.026 s (0.69% of Mean)
+Skewness = 1.1, Kurtosis = 3.42, MValue = 2
+-------------------- Histogram --------------------
+[3.677 s ; 3.783 s) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+Benchmark.StringConcatMethod: DefaultJob
+Runtime = .NET 9.0.2 (9.0.225.6610), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 3.805 s, StdErr = 0.004 s (0.10%), N = 15, StdDev = 0.015 s
+Min = 3.783 s, Q1 = 3.794 s, Median = 3.799 s, Q3 = 3.819 s, Max = 3.831 s
+IQR = 0.025 s, LowerFence = 3.757 s, UpperFence = 3.856 s
+ConfidenceInterval = [3.789 s; 3.822 s] (CI 99.9%), Margin = 0.016 s (0.43% of Mean)
+Skewness = 0.36, Kurtosis = 1.56, MValue = 2
+-------------------- Histogram --------------------
+[3.775 s ; 3.840 s) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+Benchmark.StringInterpolation: DefaultJob
+Runtime = .NET 9.0.2 (9.0.225.6610), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 3.811 s, StdErr = 0.004 s (0.10%), N = 15, StdDev = 0.015 s
+Min = 3.785 s, Q1 = 3.802 s, Median = 3.815 s, Q3 = 3.819 s, Max = 3.839 s
+IQR = 0.016 s, LowerFence = 3.778 s, UpperFence = 3.844 s
+ConfidenceInterval = [3.795 s; 3.827 s] (CI 99.9%), Margin = 0.016 s (0.42% of Mean)
+Skewness = -0.08, Kurtosis = 2.27, MValue = 2
+-------------------- Histogram --------------------
+[3.777 s ; 3.847 s) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+
+BenchmarkDotNet v0.15.2, macOS Sequoia 15.5 (24F74) [Darwin 24.5.0]
+Apple M1, 1 CPU, 8 logical and 8 physical cores
+.NET SDK 9.0.200
+  [Host]     : .NET 9.0.2 (9.0.225.6610), Arm64 RyuJIT AdvSIMD
+  DefaultJob : .NET 9.0.2 (9.0.225.6610), Arm64 RyuJIT AdvSIMD

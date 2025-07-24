@@ -11,6 +11,13 @@ public static class Program
         //* String interpolation {result += $"{i}"}, calls ToString() on each iteration and then concatenates, which is also slow.
         //* String.Concat method is similar to string concatenation, but it is optimized for concatenating
 
+        //! String concatenation, interpolation and Concat methods are similar enough in performance that the choice between them is more about readability.
+        //! StringBuilder is by far the best choice when dealing with large amount of string operations, especially in loops.
+
+
+        //? Prefer StringBuilder for loops and large data operations.
+        //? Prefer string concatenation or interpolation for small, readable operations.
+
         BenchmarkRunner.Run<Benchmark>();
     }
 }
